@@ -5,12 +5,12 @@ services:
     build: maven
     volumes:
       - mydata:/app/lesson12/target/
-    prod:
-      image: tomcat:9.0.8-jre8-alpine
-      ports:
-        - "8080:8080"
-      volumes:
-        - mydata:/usr/local/tomcat/webapps
+  prod:
+    image: tomcat:9.0.8-jre8-alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - mydata:/usr/local/tomcat/webapps
   volumes:
     mydata:
 
