@@ -5,12 +5,14 @@ services:
     build: maven
     volumes:
       - mydata2:/app/lesson12/target/
+      - mydata3:/app/lesson12/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/WebContent/
   prod:
     image: tomcat:9
     ports:
       - "8080:8080"
     volumes:
       - mydata2:/usr/local/tomcat/webapps
+      - mydata3:/usr/local/tomcat/ROOT/
 
 
   db:
@@ -21,9 +23,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: app42
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
+
   adminer:
     image: adminer
     restart: always
@@ -32,3 +32,4 @@ services:
 
 volumes:
   mydata2:
+  mydata3:
