@@ -4,7 +4,7 @@ services:
   dev:
     build: maven
     volumes:
-      - mydata:/app/lesson12/target/
+      - mydata:/app/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/target/
   prod:
     image: tomcat:9.0.8-jre8-alpine
     ports:
