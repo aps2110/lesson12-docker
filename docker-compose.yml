@@ -5,7 +5,7 @@ services:
     build: maven
     volumes:
       - mydata2:/app/lesson12/target/
-      - mydata3:/app/lesson12/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/WebContent/
+      - mydata3:/app/lesson12/WebContent/
   prod:
     image: tomcat:9
     ports:
