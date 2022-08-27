@@ -11,8 +11,7 @@ services:
       - "8080:8080"
     volumes:
       - mydata:/usr/local/tomcat/webapps
-  volumes:
-    mydata:
+
 
   db:
     image: mysql
@@ -27,3 +26,5 @@ services:
     restart: always
     ports:
       - 8081:8080
+volumes:
+  mydata:
