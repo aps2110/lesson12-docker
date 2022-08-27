@@ -6,7 +6,7 @@ services:
     volumes:
       - mydata2:/app/lesson12/target/
   prod:
-    image: tomcat:9-jdk17
+    image: tomcat:9
     ports:
       - "8080:8080"
     volumes:
@@ -21,6 +21,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app42
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
   adminer:
     image: adminer
     restart: always
