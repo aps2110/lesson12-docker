@@ -6,7 +6,7 @@ services:
     volumes:
       - mydata:/app/lesson12/target/
   prod:
-    image: tomcat:9.0.8-jre8-alpine
+    image: tomcat:9.0.8-jre11
     ports:
       - "8080:8080"
     volumes:
