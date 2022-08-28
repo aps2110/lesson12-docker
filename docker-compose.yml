@@ -27,6 +27,7 @@ services:
     volumes:
       - mydata:/usr/local/tomcat/webapps
       - mydata2:/usr/local/tomcat/ROOT/
+
   adminer:
     image: adminer
     restart: always
