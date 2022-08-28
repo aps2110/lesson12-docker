@@ -4,17 +4,15 @@ services:
   dev:
     build: maven
     volumes:
-      - mydata2:/app/lesson12/target/
-      - mydata3:/app/lesson12/WebContent/
+      - mydata:/app/lesson12/target/
+      - mydata:/app/lesson12/WebContent/
   prod:
     image: tomcat:9
     ports:
       - "8080:8080"
-    links:
-      - "db:database"
     volumes:
-      - mydata2:/usr/local/tomcat/webapps
-      - mydata3:/usr/local/tomcat/ROOT/
+      - mydata:/usr/local/tomcat/webapps
+      - mydata:/usr/local/tomcat/ROOT/
 
 
   db:
@@ -25,9 +23,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user1
-      MYSQL_PASSWORD: Password1!
-      MYSQL_DATABASE: app42
     ports:
       - 3306:3306
     volumes:
@@ -41,7 +36,5 @@ services:
       - 8081:8080
 
 volumes:
-  mydata2:
-  mydata3:
+  mydata:
   db_data:
-    driver: local
