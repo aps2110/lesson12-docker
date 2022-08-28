@@ -1,8 +1,7 @@
 
 CREATE DATABASE IF NOT EXISTS app42;
 
-
-CREATE USER 'user1'@'localhost' IDENTIFIED BY 'Password1!';
+CREATE USER 'user1'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES *.* TO 'user1'@'localhost';
 
 FLUSH PRIVILEGES;

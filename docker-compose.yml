@@ -5,14 +5,14 @@ services:
     build: maven
     volumes:
       - mydata:/app/lesson12/target/
-      - mydata2:/app/lesson12/WebContent/
+      - mydata:/app/lesson12/WebContent/
   prod:
     image: tomcat:9
     ports:
       - "8080:8080"
     volumes:
       - mydata:/usr/local/tomcat/webapps
-      - mydata2:/usr/local/tomcat/ROOT/
+      - mydata:/usr/local/tomcat/ROOT/
 
 
   db:
@@ -23,11 +23,11 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user1
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: app42
     ports:
       - 3306:3306
+    volumes:
+      - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - db_data:/var/lib/mysql
 
 
   adminer:
