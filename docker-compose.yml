@@ -5,14 +5,14 @@ services:
     build: maven
     volumes:
       - mydata:/app/lesson12/target/
-      - mydata:/app/lesson12/WebContent/
+      - mydata2:/app/lesson12/WebContent/
   prod:
     image: tomcat:9
     ports:
       - "8080:8080"
     volumes:
       - mydata:/usr/local/tomcat/webapps
-      - mydata:/usr/local/tomcat/ROOT/
+      - mydata2:/usr/local/tomcat/ROOT/
 
 
   db:
@@ -37,4 +37,5 @@ services:
 
 volumes:
   mydata:
+  mydata2:
   db_data:
