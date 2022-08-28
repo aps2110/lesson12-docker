@@ -38,5 +38,5 @@ services:
 
 volumes:
   mydata:
-  mydata2:
+  db_data:
 
